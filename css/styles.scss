@@ -1,0 +1,260 @@
+:root{
+  --primary-blue: hsl(246, 80%, 60%);
+  --primary-work: hsl(15, 100%, 70%);
+  --primary-play: hsl(195, 74%, 62%);
+  --primary-study: hsl(348, 100%, 68%);
+  --primary-exercise: hsl(145, 58%, 55%);
+  --primary-social: hsl(264, 64%, 52%);
+  --primary-selfcare: hsl(43, 84%, 65%);
+
+  --neutral-900: hsl(226, 43%, 10%);
+  --neutral-700: hsl(235, 46%, 20%);
+  --neutral-500: hsl(235, 45%, 61%);
+  --neutral-300: hsl(236, 100%, 87%);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li{
+  list-style: none;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--neutral-900);
+  font-family: 'Rubik', sans-serif;
+}
+
+
+main{
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  padding: 2rem 1rem;
+  @media screen and (min-width: 1000px){
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+main > div:first-of-type{
+  grid-row: 1 / 3;
+}
+
+.card__wrapper{
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  max-width: 400px;
+}
+.card{
+  background-color: var(--neutral-700);
+  border-radius: 15px;
+  padding: 1rem;
+  transform: translateY(-15px);
+  height: 100%;
+  &__gfx{
+    padding:1.5rem;
+    overflow: hidden;
+    position: relative;
+    &.work{
+      background-color: var(--primary-work);
+    }
+    &.play{
+      background-color: var(--primary-play);
+    }
+    &.study{
+      background-color: var(--primary-study);
+    }
+    &.exercise{
+      background-color: var(--primary-exercise);
+    }
+    &.social{
+      background-color: var(--primary-social);
+    }
+    &.selfcare{
+      background-color: var(--primary-selfcare);
+    }
+    img{
+      position: absolute;
+      right: 0;
+      top: -1rem;
+    }
+  }
+  &__title{
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  &__current{
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+  &__lastWeek{
+    color: var(--neutral-300);
+    font-size: 0.9rem;
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__body{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
+
+.dots{
+  padding: 5px;
+  span{
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: var(--neutral-300);
+    border-radius: 50%;
+    position: relative;
+    &::before, &::after{
+      content: "";
+      width: 3px;
+      height: 3px;
+      background-color: var(--neutral-300);
+      border-radius: 50%;
+      position: absolute;
+    }
+    &::before{
+      left: -5px;
+    }
+    &::after{
+      left: 5px;
+    }
+  }
+  &:hover{
+    cursor: pointer;
+    span{
+      background-color: white;
+      &::after, &::before{
+        background-color: white;
+      }
+    }
+  }
+}
+
+.profile{
+
+  h2{
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+    grid-area: h2;
+
+  }
+  span{
+    color: var(--neutral-300);
+    grid-area: span;
+  }
+  &__header{
+    display: grid;
+    grid-template-areas: "img span"
+    "img h2";
+    position: relative;
+    z-index: 2;
+    border-radius: 15px;
+    padding: 1.5rem;
+    background-color: var(--primary-blue);
+  }
+  &__img{
+    grid-area: img;
+    //margin-bottom: 2rem;
+    border-radius: 50%;
+    border: solid white 2px;
+    width: 50px;
+    height: 50px;
+    img{
+      width: 100%;
+    }
+  }
+
+  button{
+    cursor: pointer;
+    background-color: var(--neutral-700);
+    border: none;
+    color: var(--neutral-500);
+    padding: .3rem;
+    margin: .5rem 0;
+    &:hover{
+      color: var(--neutral-300);
+    }
+    &.active{
+      color: white;
+    }
+  }
+  ul{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1000px){
+  .card{
+    cursor: pointer;
+    &:hover{
+      background-color: lighten(hsl(235, 46%, 20%), 10);
+    }
+
+  }
+  .card__wrapper.profile .card{
+    cursor: revert;
+    &:hover{
+      background-color: var(--neutral-700);
+    }
+
+  }
+  .card__body{
+    flex-direction: column;
+  }
+  .card__current{
+    padding: 1rem 0;
+  }
+  .profile{
+    h2{
+      font-size: 2rem;
+      padding-bottom: 2.5rem;
+    }
+    &__header{
+      display: revert;
+    }
+    &__img{
+      margin-bottom: 2rem;
+    }
+
+    button{
+      cursor: pointer;
+      background-color: var(--neutral-700);
+      border: none;
+      color: var(--neutral-500);
+      padding: .3rem;
+      margin: .5rem 0;
+      &:hover{
+        color: var(--neutral-300);
+      }
+      &.active{
+        color: white;
+      }
+    }
+    ul{
+      display: revert;
+      padding-top: 1.5rem;
+    }
+  }
+}

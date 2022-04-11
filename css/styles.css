@@ -1,0 +1,203 @@
+:root {
+  --primary-blue: hsl(246, 80%, 60%);
+  --primary-work: hsl(15, 100%, 70%);
+  --primary-play: hsl(195, 74%, 62%);
+  --primary-study: hsl(348, 100%, 68%);
+  --primary-exercise: hsl(145, 58%, 55%);
+  --primary-social: hsl(264, 64%, 52%);
+  --primary-selfcare: hsl(43, 84%, 65%);
+  --neutral-900: hsl(226, 43%, 10%);
+  --neutral-700: hsl(235, 46%, 20%);
+  --neutral-500: hsl(235, 45%, 61%);
+  --neutral-300: hsl(236, 100%, 87%); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+li {
+  list-style: none; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--neutral-900);
+  font-family: 'Rubik', sans-serif; }
+
+main {
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  padding: 2rem 1rem; }
+  @media screen and (min-width: 1000px) {
+    main {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr); } }
+
+main > div:first-of-type {
+  grid-row: 1 / 3; }
+
+.card__wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  max-width: 400px; }
+
+.card {
+  background-color: var(--neutral-700);
+  border-radius: 15px;
+  padding: 1rem;
+  transform: translateY(-15px);
+  height: 100%; }
+  .card__gfx {
+    padding: 1.5rem;
+    overflow: hidden;
+    position: relative; }
+    .card__gfx.work {
+      background-color: var(--primary-work); }
+    .card__gfx.play {
+      background-color: var(--primary-play); }
+    .card__gfx.study {
+      background-color: var(--primary-study); }
+    .card__gfx.exercise {
+      background-color: var(--primary-exercise); }
+    .card__gfx.social {
+      background-color: var(--primary-social); }
+    .card__gfx.selfcare {
+      background-color: var(--primary-selfcare); }
+    .card__gfx img {
+      position: absolute;
+      right: 0;
+      top: -1rem; }
+  .card__title {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500; }
+  .card__current {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 300; }
+  .card__lastWeek {
+    color: var(--neutral-300);
+    font-size: 0.9rem; }
+  .card__header {
+    display: flex;
+    justify-content: space-between; }
+  .card__body {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between; }
+
+.dots {
+  padding: 5px; }
+  .dots span {
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: var(--neutral-300);
+    border-radius: 50%;
+    position: relative; }
+    .dots span::before, .dots span::after {
+      content: "";
+      width: 3px;
+      height: 3px;
+      background-color: var(--neutral-300);
+      border-radius: 50%;
+      position: absolute; }
+    .dots span::before {
+      left: -5px; }
+    .dots span::after {
+      left: 5px; }
+  .dots:hover {
+    cursor: pointer; }
+    .dots:hover span {
+      background-color: white; }
+      .dots:hover span::after, .dots:hover span::before {
+        background-color: white; }
+
+.profile h2 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 300;
+  grid-area: h2; }
+.profile span {
+  color: var(--neutral-300);
+  grid-area: span; }
+.profile__header {
+  display: grid;
+  grid-template-areas: "img span" "img h2";
+  position: relative;
+  z-index: 2;
+  border-radius: 15px;
+  padding: 1.5rem;
+  background-color: var(--primary-blue); }
+.profile__img {
+  grid-area: img;
+  border-radius: 50%;
+  border: solid white 2px;
+  width: 50px;
+  height: 50px; }
+  .profile__img img {
+    width: 100%; }
+.profile button {
+  cursor: pointer;
+  background-color: var(--neutral-700);
+  border: none;
+  color: var(--neutral-500);
+  padding: .3rem;
+  margin: .5rem 0; }
+  .profile button:hover {
+    color: var(--neutral-300); }
+  .profile button.active {
+    color: white; }
+.profile ul {
+  display: flex;
+  justify-content: space-between; }
+
+@media screen and (min-width: 1000px) {
+  .card {
+    cursor: pointer; }
+    .card:hover {
+      background-color: #292f70; }
+
+  .card__wrapper.profile .card {
+    cursor: revert; }
+    .card__wrapper.profile .card:hover {
+      background-color: var(--neutral-700); }
+
+  .card__body {
+    flex-direction: column; }
+
+  .card__current {
+    padding: 1rem 0; }
+
+  .profile h2 {
+    font-size: 2rem;
+    padding-bottom: 2.5rem; }
+  .profile__header {
+    display: revert; }
+  .profile__img {
+    margin-bottom: 2rem; }
+  .profile button {
+    cursor: pointer;
+    background-color: var(--neutral-700);
+    border: none;
+    color: var(--neutral-500);
+    padding: .3rem;
+    margin: .5rem 0; }
+    .profile button:hover {
+      color: var(--neutral-300); }
+    .profile button.active {
+      color: white; }
+  .profile ul {
+    display: revert;
+    padding-top: 1.5rem; } }
+
+/*# sourceMappingURL=styles.css.map */

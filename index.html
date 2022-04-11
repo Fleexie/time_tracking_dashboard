@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+<!--  <style>-->
+<!--    .attribution { font-size: 11px; text-align: center; }-->
+<!--    .attribution a { color: hsl(228, 45%, 44%); }-->
+<!--  </style>-->
+  <script src="js/main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main>
+  <div class="card__wrapper profile">
+    <div class="profile__header">
+      <div class="profile__img"><img src="images/image-jeremy.png" alt="profile image"></div>
+      <span>Report for</span>
+      <h2>Jeremy Robson</h2>
+    </div>
+    <div class="card">
+      <ul>
+        <li><button class="active" onclick="changeTimeframe(this)" data-timeframe="daily">Daily</button></li>
+        <li><button onclick="changeTimeframe(this)" data-timeframe="weekly">Weekly</button></li>
+        <li><button onclick="changeTimeframe(this)" data-timeframe="monthly">Monthly</button></li>
+      </ul>
+    </div>
+  </div>
+  <div class="card__wrapper">
+    <div class="card__gfx work">
+      <img src="images/icon-work.svg" alt="">
+    </div>
+    <div class="card">
+      <div class="card__header">
+        <h2 class="card__title">Title</h2>
+        <div class="dots">
+          <span></span>
+        </div>
+      </div>
+      <div class="card__body">
+        <p class="card__current"><span class="hours">4</span>hrs</p>
+        <p class="card__lastWeek"> <span class="label"> Last Week</span> - <span class="hours">5</span>hrs</p>
+      </div>
+    </div>
+  </div>
+  <div class="card__wrapper">
+    <div class="card__gfx play">
+      <img src="images/icon-play.svg" alt="">
+    </div>
+    <div class="card">
+      <div class="card__header">
+        <h2 class="card__title">Title</h2>
+        <div class="dots">
+          <span></span>
+        </div>
+      </div>
+      <div class="card__body">
+        <p class="card__current"><span class="hours">4</span>hrs</p>
+        <p class="card__lastWeek"> <span class="label"> Last Week</span> - <span class="hours">5</span>hrs</p>
+      </div>
+    </div>
+  </div>
+  <div class="card__wrapper">
+    <div class="card__gfx study">
+      <img src="images/icon-study.svg" alt="">
+    </div>
+    <div class="card">
+      <div class="card__header">
+        <h2 class="card__title">Title</h2>
+        <div class="dots">
+          <span></span>
+        </div>
+      </div>
+      <div class="card__body">
+        <p class="card__current"><span class="hours">4</span>hrs</p>
+        <p class="card__lastWeek"> <span class="label"> Last Week</span> - <span class="hours">5</span>hrs</p>
+      </div>
+    </div>
+  </div>
+  <div class="card__wrapper">
+    <div class="card__gfx exercise">
+      <img src="images/icon-exercise.svg" alt="">
+    </div>
+    <div class="card">
+      <div class="card__header">
+        <h2 class="card__title">Title</h2>
+        <div class="dots">
+          <span></span>
+        </div>
+      </div>
+      <div class="card__body">
+        <p class="card__current"><span class="hours">4</span>hrs</p>
+        <p class="card__lastWeek"> <span class="label"> Last Week</span> - <span class="hours">5</span>hrs</p>
+      </div>
+    </div>
+  </div>
+  <div class="card__wrapper">
+    <div class="card__gfx social">
+      <img src="images/icon-social.svg" alt="">
+    </div>
+    <div class="card">
+      <div class="card__header">
+        <h2 class="card__title">Title</h2>
+        <div class="dots">
+          <span></span>
+        </div>
+      </div>
+      <div class="card__body">
+        <p class="card__current"><span class="hours">4</span>hrs</p>
+        <p class="card__lastWeek"> <span class="label"> Last Week</span> - <span class="hours">5</span>hrs</p>
+      </div>
+    </div>
+  </div>
+  <div class="card__wrapper">
+    <div class="card__gfx selfcare">
+      <img src="images/icon-self-care.svg" alt="">
+    </div>
+    <div class="card">
+      <div class="card__header">
+        <h2 class="card__title">Title</h2>
+        <div class="dots">
+          <span></span>
+        </div>
+      </div>
+      <div class="card__body">
+        <p class="card__current"><span class="hours">4</span>hrs</p>
+        <p class="card__lastWeek"> <span class="label"> Last Week</span> - <span class="hours">5</span>hrs</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
